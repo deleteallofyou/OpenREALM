@@ -62,7 +62,7 @@ sudo apt-get update
 sudo apt-get install -y -q apt-utils ca-certificates lsb-release gnupg2 curl libproj-dev
 
 # Eigen3 for several linear algebra problems
-sudo apt-get install -y -q libeigen3-dev
+sudo apt-get install -y -q libeigen3-dev 
 
 # Gdal library for conversions between UTM and WGS84
 sudo apt-get install -y -q gdal-bin
@@ -80,7 +80,7 @@ sudo apt-get install -y -q exiv2 libexiv2-dev apt-utils
 # Used by Pangolin/OpenGL
 sudo apt-get install -y -q libglew-dev libxkbcommon-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev
 sudo apt-get install -y -q libxi-dev libxmu-dev libxmu-headers x11proto-input-dev
-
+sudo apt-get install -y -q libboost-dev libboost-thread-dev libboost-filesystem-dev
 # g2o dependencies
 sudo apt-get install -y libatlas-base-dev libsuitesparse-dev
 
@@ -150,6 +150,17 @@ cmake \
     -DG2O_USE_OPENGL=OFF \
     -DG2O_USE_OPENMP=ON \
     ..
+make -j4
+sudo make install
+
+
+# pangolin
+cd ~ && mkdir pangolin && cd pangolin
+git clone https://github.com/stevenlovegrove/Pangolin.git
+cd Pangolin
+git submodule init && git submodule update
+mkdir build && cd build
+cmake ..
 make -j4
 sudo make install
 
