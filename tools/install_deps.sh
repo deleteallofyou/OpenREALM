@@ -116,22 +116,7 @@ else
        echo "No problems to repair."
 fi
 
-OPENCV_VERSION=$(/usr/bin/opencv_version)
-read OPENCV_VERSION_MAJOR OPENCV_VERSION_MINOR OPENCV_VERSION_PATCH <<< ${OPENCV_VERSION//[^0-9]/ }
 
-if [[ $OPENCV_VERSION == "3.3.1" ]]; then
-        echo "[OK] OpenCV Version is 3.3.1"
-else
-        echo "[Warning] OpenCV Version $OPENCV_VERSION detected. It is recommended to build OpenREALM with OpenCV 3.3.1."
-        while true; do
-          read -p "Continue anyway? [yes/no]" yn
-          case $yn in
-            [Yy]* ) break;;
-            [Nn]* ) exit;;
-            * ) echo "Please answer yes or no.";;
-          esac
-        done
-fi
 
 # G2O
 cd ~ && mkdir g2o && cd g2o
