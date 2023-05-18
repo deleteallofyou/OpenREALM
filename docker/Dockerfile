@@ -42,7 +42,7 @@ RUN set -ex \
     && apt-get install -y -q ros-melodic-desktop
 RUN set -ex \
     && apt-get install -y -q ros-melodic-geographic-msgs ros-melodic-geodesy \
-        ros-melodic-cv-bridge ros-melodic-rviz ros-melodic-pcl-ros
+        ros-melodic-cv-bridge ros-melodic-rviz ros-melodic-pcl-ros ros-melodic-tf2-geometry-msgs libgeographic-dev
 
 # Create catkin workspace and clone the repo
 RUN set -ex \
