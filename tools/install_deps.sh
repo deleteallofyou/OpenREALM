@@ -139,9 +139,9 @@ make -j4
 sudo make install
 
 
-# pangolin
+# pangolin v0.5
 cd ~ && mkdir pangolin && cd pangolin
-git clone https://github.com/stevenlovegrove/Pangolin.git
+git clone -b v0.5 --depth=1 https://github.com/stevenlovegrove/Pangolin.git
 cd Pangolin
 git submodule init && git submodule update
 mkdir build && cd build
